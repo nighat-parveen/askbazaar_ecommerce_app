@@ -1,5 +1,9 @@
+import { Routes } from '@angular/router';
 
 
-const enum routes {
-
-}
+export const full_layout: Routes = [
+    {
+        path: 'product',
+        loadChildren: () => import('./../pages/product/product-routing.module').then(m => m.ProductRoutingModule)
+    }
+]

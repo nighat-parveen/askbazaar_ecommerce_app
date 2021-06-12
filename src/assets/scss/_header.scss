@@ -37,12 +37,26 @@ nav {
     
         li {
             display: inline-block;
-            margin: 0 20px
+            margin: 0 20px;
+           
         }
     
         li a{
             text-decoration: none;
             color: $black;
+            border-bottom: 2px solid transparent;
+            padding: 10px 0;
+            transition: border-bottom 0.5s ;
+            -webkit-transition: border-bottom 0.5s ;
+            -moz-transition: border-bottom 0.5s ;
+            -ms-transition: border-bottom 0.5s ;
+            -o-transition: border-bottom 0.5s ;
+            
+
+            &:active,
+            &:hover {
+                border-bottom: 2px solid $red;
+            }
         }
     
         img{

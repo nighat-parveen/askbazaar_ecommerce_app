@@ -1,1 +1,19 @@
-<p>sidenav works!</p>
+
+<div class="sidebar sidebar-wrapper">
+    <div class="sidebar-header">
+
+    </div>
+    <div class="sidebar-content">
+        <ul>
+            <li *ngFor="let menuItem of menuItems"
+                [ngClass]="[menuItem.class]"
+                [routerLinkActive]="menuItem.subMenu.length!=0 ? '' : 'active'"
+                [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="menuItem.class=='' ? [menuItem.path] : ''">
+                        <span class="material-icons icon">{{ menuItem.icon}}</span>
+                        <span class="menu-title">{{ menuItem.title }}</span>
+                    </a>
+            </li>
+        </ul>
+    </div>
+</div>

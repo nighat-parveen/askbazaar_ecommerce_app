@@ -1,3 +1,4 @@
+import { ROUTES } from './sidebar-routes.config';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  public menuItems: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    this.menuItems = ROUTES.filter(item => item);
   }
 
 }
