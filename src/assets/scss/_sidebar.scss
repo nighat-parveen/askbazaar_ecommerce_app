@@ -5,6 +5,7 @@
     left:0;
     bottom: 0;
     background-color: $side-nav-color;
+    z-index: 999999;
     // border-right: 2px solid darken($side-nav-color,5);
     box-shadow: 0 0px 5px rgba(#555,0.6);
 

@@ -1,1 +1,18 @@
-{{data}}
+<div class="product-wrapper" >
+    <div class="row">
+        <div class="col span-1-of-3 m-0-2" *ngFor="let item of productList">
+            <div class="card">
+                <h3>{{ item.name }}</h3>
+                <div class="card-content">
+                    <img [src]="item.imageURL" alt="" />
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, impedit?
+                    </div>
+                </div>
+                <div class="card-price">
+                    Buy Now @&nbsp;&#8377;87
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>

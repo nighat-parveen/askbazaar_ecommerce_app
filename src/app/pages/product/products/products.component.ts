@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ConfigService } from 'src/app/core/services/config.service';
+import { Product } from './../../../core/models/product.model';
+
 
 @Component({
   selector: 'app-products',
@@ -7,13 +10,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  data: any;
-  constructor(private router: ActivatedRoute ) { 
-   this.router.params.subscribe(data => this.data = data.id)
-   console.log(this.data);
+
+  public productList: Product[] = [];
+
+
+  constructor(private router: ActivatedRoute,
+              private configService: ConfigService ) { 
+    this.router.params.subscribe(data => {
+      // console.log(data.id);
+      this.getProductList(data.id);
+    });
+   
   }
 
   ngOnInit(): void {
+  }
+
+  getProductList(categoryType = 'all') {
+      const data = this.configService.getProductByCategoryType(categoryType);
+      this.productList = data.map(item => new Product(item));
+      console.log(this.productList);
+    
   }
 
 }

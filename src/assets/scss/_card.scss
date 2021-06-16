@@ -1,0 +1,79 @@
+.card{
+    width: 100%;
+    height: 300px;
+    
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    
+    padding: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.5s ease-in;
+    -webkit-transition: border-box 0.2s ease-in;
+    -moz-transition: border-box 0.2s ease-in;
+    -ms-transition: border-box 0.2s ease-in;
+    -o-transition: border-box 0.2s ease-in;
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+       
+    }
+    
+    h3{
+        font-size: 100%;
+        line-height: 145%;
+        margin-bottom: 15px;
+    }
+
+    .card-content{
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+        display: flex;
+        
+
+        img{
+            flex: 0 1 50%;
+            width: 100%;
+            height: 100%;
+            margin-right: 10px;
+            object-fit: contain;
+            
+        }
+
+        .description{
+            font-weight: 300;
+            color: darken($color: $grey, $amount: 70);
+            font-size: 95%;
+            line-height: 145%;
+            display: flex;
+
+        }
+    }
+
+
+
+
+   
+
+    .card-price{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $red;
+        background-color: $red;
+        padding: 10px 15px;
+        color: $white;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        font-size: 90%;
+        word-spacing: 0.78px;
+    }
+    
+    
+}
+
+
+

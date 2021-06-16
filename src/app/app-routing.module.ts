@@ -42,7 +42,7 @@ const routes: Routes = [
         // add hash url
         useHash: true, 
         // for preload modules
-        preloadingStrategy: PreloadAllModules
+        // preloadingStrategy: PreloadAllModules
       }
     
     )],
