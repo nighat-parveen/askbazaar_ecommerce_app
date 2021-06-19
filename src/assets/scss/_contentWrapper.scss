@@ -5,4 +5,12 @@
     padding: 70px 30px 50px;
     overflow-x: hidden;
     overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    position: relative;
+}
+
+.product-wrapper::-webkit-scrollbar{
+    display: none;
+    background-color: transparentize($color: #fff, $amount: 0)
 }

@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
-import { BannersComponent } from './banners/banners.component';
 import { OffersComponent } from './offers/offers.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BannersComponent,
     OffersComponent,
     CategoriesComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     HomeRoutingModule
   ]
 })

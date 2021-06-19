@@ -7,6 +7,11 @@ export const content_routes: Routes = [
    { 
        path: 'auth',
        loadChildren: () => import('./../pages/onboard/onboard.module').then(m => m.OnboardModule)
-   }
+   },
+
+   {
+    path: 'home',
+    loadChildren: () => import('./../pages/home/home.module').then(m => m.HomeModule)
+}
 
 ]

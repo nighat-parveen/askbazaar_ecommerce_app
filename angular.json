@@ -29,13 +29,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
               "src/assets/css/grid.css",
               "src/assets/scss/app.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/assets/js/slider.js"
+            ]
           },
           "configurations": {
             "production": {
