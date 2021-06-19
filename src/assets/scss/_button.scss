@@ -3,9 +3,19 @@
     border: none;
     padding: 10px 30px;
     margin: 5px;
+    font-size: 90%;
 }
 
 .btn-filled{
     color: $white;
     background-color: $red;
+}
+
+.btn-size{
+    width: 300px;
+}
+
+.btn-pd-filled{
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

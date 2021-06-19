@@ -7,7 +7,7 @@ export class Product{
     public order: string;
     public id: string;
 
-    constructor(data: any){
+    constructor(data?: any){
          data = data || {};
          this.name = data.name || '';
          this.key = data.key || '';

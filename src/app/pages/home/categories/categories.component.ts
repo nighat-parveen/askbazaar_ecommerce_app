@@ -1,3 +1,5 @@
+import { ConfigService } from 'src/app/core/services/config.service';
+import { Category } from './../../../core/models/category.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-
-  constructor() { }
+  public categories: Category[] = [];
+  constructor(private configService: ConfigService ) { }
 
   ngOnInit(): void {
+    this.getCategoryList();
+  }
+
+
+  getCategoryList(){
+    this.categories = this.configService.getCategories().map(item => new Category(item));
   }
 
 }
