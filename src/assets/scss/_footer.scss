@@ -12,7 +12,9 @@ footer{
     align-items: center;
     
     p{
-        
+        width: 80%;
+        margin-left: 10%;
+        text-align: center;
         font-size: 60%;
         font-weight: 500;
         line-height: 145%;
@@ -20,4 +22,8 @@ footer{
         word-spacing: 1px;
         letter-spacing: 0.8px;
     }
+}
+
+@media only screen and (max-width: 500px){
+
 }
