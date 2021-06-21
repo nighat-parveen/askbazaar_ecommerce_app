@@ -6,7 +6,7 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 5px; 
     padding: 10px;
     @include borderShadow();
@@ -76,6 +76,62 @@
     
     
 }
+
+// @media only screen and (max-width: 1540px){
+//     .card{
+//         height: 500px;
+//         justify-content: space-evenly;
+//         .card-content{
+//             flex-direction: column;
+//             height: auto;
+//         }   
+//     }
+// }
+
+
+@media only screen and (max-width: 1141px){
+	.card{
+       
+        justify-content: space-evenly;
+        width: 100%;
+        height: 600px;
+        .card-content{
+            flex-direction: column;
+            height: auto;
+        }   
+    }
+}
+@media only screen and (max-width: 850px){
+	.card{
+        
+        justify-content: space-evenly;
+        width: 100%;
+        height: 550px;
+        
+        .card-content{
+            flex-direction: column;
+            height: auto;
+
+           
+        }   
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+	.card{
+        
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        
+        .card-content{
+            flex-direction: column;
+            height: auto;
+        }   
+    }
+}
+
 
 
 
