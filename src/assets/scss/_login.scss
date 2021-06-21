@@ -11,9 +11,9 @@
     justify-content: center;
     align-items: center;
 
-    .row{
-         width: 100%;
-    }
+//     .row{
+//          width: 100%;
+//     }
    
 
    .log{
@@ -43,4 +43,30 @@
    
 
 
+}
+
+@media only screen and (max-width: 500px){
+     .main-container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          margin-left: 5%;
+
+          // .row{
+          //      display: flex;
+          //      flex-direction: column;
+          // }
+
+          .login-left-section{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+
+               .login-content{
+                    display: none;
+               }
+          }
+     }
 }
