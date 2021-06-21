@@ -3,13 +3,11 @@
 .card{
     width: 100%;
     height: 300px;
-    
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-bottom: 5px;
-    
+    margin-bottom: 5px; 
     padding: 10px;
     @include borderShadow();
     transition: box-shadow 0.5s ease-in;
@@ -17,6 +15,7 @@
     -moz-transition: border-box 0.2s ease-in;
     -ms-transition: border-box 0.2s ease-in;
     -o-transition: border-box 0.2s ease-in;
+    
     &:hover{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
        

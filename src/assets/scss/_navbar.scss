@@ -95,3 +95,30 @@ nav {
 }
 
 
+@media only screen and (max-width: 835px){
+    nav{
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 670px){
+   nav{
+        justify-content: space-between;
+        
+        &:first-child{
+            flex: 0 1 30%;
+        }
+        ul{
+            display: none;
+        }
+
+        .cart-container{
+            flex: 0 1 30%;
+    
+            
+        }
+    
+   }
+}
+
+
