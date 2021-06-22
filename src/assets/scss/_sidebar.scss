@@ -1,11 +1,12 @@
 .sidebar-wrapper{
     width: 260px;
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: 70px;
     left:0;
     bottom: 0;
     overflow: hidden;
     height: 100vh;
+    
     background-color: $side-nav-color;
     z-index: 999999;
     // border-right: 2px solid darken($side-nav-color,5);

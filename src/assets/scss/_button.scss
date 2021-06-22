@@ -5,6 +5,10 @@
     margin: 5px;
     font-size: 90%;
     cursor: pointer;
+
+    &:hover{
+        opacity: 0.78
+    }
 }
 
 .btn-filled{
@@ -20,3 +24,5 @@
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+

@@ -72,6 +72,11 @@
         letter-spacing: 1px;
         font-size: 90%;
         word-spacing: 0.78px;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 0.88;
+        }
     }
     
     
