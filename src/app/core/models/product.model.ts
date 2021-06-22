@@ -6,6 +6,9 @@ export class Product{
     public imageURL: string;
     public order: string;
     public id: string;
+    public price: number;
+    public stock: number;
+    public sku: string;
 
     constructor(data?: any){
          data = data || {};
@@ -16,6 +19,9 @@ export class Product{
          this.order = data.order || '';
          this.imageURL = data.imageURL || '';
          this.id = data.id || '';
+         this.price = data.price || 0.0;
+         this.stock = data.stock || 0;
+         this.sku = data.sku || '';
      }
 
 

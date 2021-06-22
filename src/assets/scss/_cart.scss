@@ -64,6 +64,20 @@
                     justify-content: center;
                     align-items: center;
                     width: 30px;
+                    border: none;
+                    cursor: pointer;
+                    transform: scale(1);
+                    transition: 0.2s transform ease-in;
+                    &:focus{
+                        outline: none;
+                       
+                    }
+
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+
+                    
                     
                 }
                

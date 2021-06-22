@@ -1,19 +1,28 @@
 <app-header></app-header>
 <section class="cart-main-container" >
     <div class="cart-header">
-        My Cart ( 1 item)
+        My Cart ( {{cartItemCounter}} item)
     </div>
-    <div class="row">
+    <div class="row" *ngFor="let item of cartItems">
         <div class="col span-2-of-2 cart-items">
-            <img src="/assets/images/products/fruit-n-veg/apple.jpg" class="cart-image" alt="">
+            <img [src]="item.product.imageURL" class="cart-image" alt="">
             <div class="item-detail">
-                <h3>Apple Washinton, Regular 4 Pcs</h3>
+                <h3>{{item.product.name}}</h3>
                 <p class="product-counter">
-                    <span class="item-count">-</span> 1 <span class="item-count">+</span> X Rs187
+                    <button 
+                        type="button" 
+                        class="item-count" 
+                        (click)="updateQty(item.id,'sub')"
+                        [disabled]="item.quantity < 0"
+                        >-</button> {{item.quantity}} 
+                    <button 
+                        class="item-count" 
+                        (click)="updateQty(item.id,'add')"
+                        [disabled]="item.quantity > item.product.stock">+</button> X Rs{{item.product.price}}
                 </p>
             </div>
             <div class="item-price">
-                Rs 187
+                Rs {{ item.product.price * item.quantity }}
             </div>
         </div>
 

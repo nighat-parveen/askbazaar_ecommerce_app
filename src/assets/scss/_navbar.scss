@@ -78,7 +78,8 @@ nav {
             justify-content: center;
             align-items: center;
             cursor: pointer;
-    
+            transition: 0.2s background-color ease-in-out;
+            
             .icon{
                 color: $red;
                 margin-right: 5px;

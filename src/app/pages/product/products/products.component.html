@@ -9,7 +9,7 @@
                         {{item.description.length<100 ? item.description : item.description.slice(0,99)}}
                     </div>
                 </div>
-                <div class="card-price" >
+                <div class="card-price" (click)="updateCart(item)">
                     Buy Now @&nbsp;&#8377;87
                 </div>
             </div>

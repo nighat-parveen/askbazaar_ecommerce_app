@@ -1,3 +1,4 @@
+import { CartService } from './../../../core/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from 'src/app/core/services/config.service';
@@ -15,22 +16,24 @@ export class ProductsComponent implements OnInit {
 
 
   constructor(private router: ActivatedRoute,
-              private configService: ConfigService ) { 
+              private configService: ConfigService ,
+              private cartService: CartService) { 
     this.router.params.subscribe(data => {
-      // console.log(data.id);
       this.getProductList(data.id);
     });
    
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   getProductList(categoryType = 'all') {
       const data = this.configService.getProductByCategoryType(categoryType);
       this.productList = data.map(item => new Product(item));
-      console.log(this.productList);
-    
+  }
+
+  updateCart(item: Product){
+    console.log(item);
+    this.cartService.setValue(item);
   }
 
 }
