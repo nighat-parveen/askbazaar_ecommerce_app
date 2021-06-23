@@ -9,6 +9,7 @@ export class Product{
     public price: number;
     public stock: number;
     public sku: string;
+    public comment: string;
 
     constructor(data?: any){
          data = data || {};
@@ -22,6 +23,7 @@ export class Product{
          this.price = data.price || 0.0;
          this.stock = data.stock || 0;
          this.sku = data.sku || '';
+         this.comment = data.comment || '';
      }
 
 

@@ -32,7 +32,6 @@ export class ProductsComponent implements OnInit {
   }
 
   updateCart(item: Product){
-    console.log(item);
     this.cartService.setValue(item);
   }
 
