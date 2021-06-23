@@ -22,13 +22,17 @@ export class OffersComponent implements OnInit,AfterViewInit {
     // get the width of image
     const size = sliderImages[0].clientWidth;
 
-    console.log(size);
-    console.log(currentIndex);
+    //  slides the image to -ve x-axis
     sliderContainer.style.transform = 'translateX('+ (-size*currentIndex) + 'px)';
+    sliderContainer.style.transition = 'transform 0.5s ease-in-out'
+
+    // sliderImages.forEach(image => {
+      
+    // });
 
     prev.addEventListener('click', () => {
-        sliderContainer.style.transition = 'transform 0.5s ease-in'
-        console.log('hello');
+       
+        
         if(currentIndex <= 0) {
           currentIndex=3
         }
@@ -37,12 +41,11 @@ export class OffersComponent implements OnInit,AfterViewInit {
     });
 
     next.addEventListener('click', () => {
-      sliderContainer.style.transition = 'transform 0.5s ease-in'
+      // sliderContainer.style.transition = 'transform 0.5s ease-in-out';
       currentIndex = currentIndex+1;
       if(currentIndex>3){
         currentIndex = 0;
       }
-      console.log(size,currentIndex);
       
       sliderContainer.style.transform = 'translateX('+ (-(size * currentIndex*4))   + 'px)';
     });
