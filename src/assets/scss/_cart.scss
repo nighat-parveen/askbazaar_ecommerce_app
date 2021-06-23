@@ -73,6 +73,11 @@
                        
                     }
 
+                    &:disabled{
+                        background-color: $grey;
+                        cursor: block;
+                    }
+
                     &:hover{
                         transform: scale(1.1);
                     }
