@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   cartItems: Cart[] = [];
   onCartItemChanged$: Subscription;
   cartItemCounter: number = 0;
-  totalCheckoutAmount: number = 0.0;
+  totalCheckoutAmount: number = 0;
   constructor(private cartService: CartService) { 
     this.onCartItemChanged$ = this.cartService.onCartChanged$
     .subscribe(value => this.cartItemCounter = value);
@@ -28,13 +28,11 @@ export class CartComponent implements OnInit {
 
   getCartItems(){
     this.cartItems = this.cartService.getCartProduct().map(item => new Cart(item));
+    this.getTotal();
   }
 
 
-  // getTotal(): number{
-  //   this.totalCheckoutAmount = this.cartItems.reduce(item => item.price);
-  //   return 0;
-  // }
+  
 
 
   updateQty(id: string , mode: string){
@@ -45,11 +43,17 @@ export class CartComponent implements OnInit {
         const qty = item.quantity;
         
         item.quantity = mode === 'sub' ? qty-1 : qty + 1;
-        
+        item.price = item.quantity * item.product.price;
       }
     });
     this.cartItems = this.cartItems.filter(item => item.quantity !== 0 );
-    
+    this.getTotal();
+  }
+
+
+  getTotal(): void{
+    const dd = this.cartItems.map(item => item.price);
+    this.totalCheckoutAmount = dd.reduce((item,acc) => item+acc);
   }
 
 }
