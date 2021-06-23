@@ -27,7 +27,11 @@ export class CartComponent implements OnInit {
 
 
   getCartItems(){
-    this.cartItems = this.cartService.getCartProduct().map(item => new Cart(item));
+    this.cartItems = this.cartService.getCartProduct().map(item => {
+      const data = new Cart(item);
+      data.price = data.product.price;
+      return data;
+    });
     this.getTotal();
   }
 
@@ -43,8 +47,9 @@ export class CartComponent implements OnInit {
         const qty = item.quantity;
         
         item.quantity = mode === 'sub' ? qty-1 : qty + 1;
-        item.price = item.quantity * item.product.price;
+        
       }
+      item.price = item.quantity * item.product.price;
     });
     this.cartItems = this.cartItems.filter(item => item.quantity !== 0 );
     this.getTotal();
@@ -52,8 +57,14 @@ export class CartComponent implements OnInit {
 
 
   getTotal(): void{
-    const dd = this.cartItems.map(item => item.price);
-    this.totalCheckoutAmount = dd.reduce((item,acc) => item+acc);
+    
+    let count = 0;
+    this.cartItems.forEach(item => {
+      count = item.price + count;
+    });
+    this.totalCheckoutAmount = count;
+    
+
   }
 
 }

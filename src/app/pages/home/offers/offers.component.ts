@@ -24,15 +24,13 @@ export class OffersComponent implements OnInit,AfterViewInit {
 
     //  slides the image to -ve x-axis
     sliderContainer.style.transform = 'translateX('+ (-size*currentIndex) + 'px)';
-    sliderContainer.style.transition = 'transform 0.5s ease-in-out'
+    sliderContainer.style.transition = 'transform 0.8s ease-in-out'
 
     // sliderImages.forEach(image => {
       
     // });
 
     prev.addEventListener('click', () => {
-       
-        
         if(currentIndex <= 0) {
           currentIndex=3
         }

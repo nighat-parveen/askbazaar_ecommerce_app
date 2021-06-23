@@ -1,3 +1,4 @@
+import { SidebarService } from './../sidenav/sidebar.service';
 import { CartService } from './../../core/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -10,11 +11,15 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
   cartItemCounter: number = 0;
   onCartValueChanged$: Subscription;
-  constructor(private cartService: CartService) {
-    this.onCartValueChanged$ = this.cartService.onCartChanged$
-                                .subscribe(value => this.cartItemCounter = value);
+
+  constructor(private cartService: CartService,
+              private sidebarService: SidebarService) {
+              this.onCartValueChanged$ = this.cartService.onCartChanged$
+              .subscribe(value => this.cartItemCounter = value);
    }
 
   ngOnInit(): void {}
+
+  
 
 }
