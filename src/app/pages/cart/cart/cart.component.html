@@ -12,12 +12,12 @@
                     <button 
                         type="button" 
                         class="item-count" 
-                        (click)="updateQty(item.id,'sub')"
+                        (click)="updateQty(item.product.id,'sub')"
                         [disabled]="item.quantity < 0"
                         >-</button> {{item.quantity}} 
                     <button 
                         class="item-count" 
-                        (click)="updateQty(item.id,'add')"
+                        (click)="updateQty(item.product.id,'add')"
                         [disabled]="item.quantity > item.product.stock">+</button> X Rs{{item.product.price}}
                 </p>
             </div>

@@ -39,6 +39,17 @@ export class CartComponent implements OnInit {
 
   updateQty(id: string , mode: string){
     
+    
+    this.cartItems.forEach(item => {
+      if(item.product.id === id){
+        const qty = item.quantity;
+        
+        item.quantity = mode === 'sub' ? qty-1 : qty + 1;
+        
+      }
+    });
+    this.cartItems = this.cartItems.filter(item => item.quantity !== 0 );
+    
   }
 
 }
