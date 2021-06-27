@@ -1,18 +1,20 @@
-<section class="category-container" 
-     aria-labelledby="categories" 
-     name="categories" 
-     sr-only="categories">
-
-    <div class="category-card" *ngFor="let item of categories">
-         <img [src]="item.imageUrl" alt="categories" />
-         <div class="product-details">
-             <h3>{{item.name}}</h3>
-             <p class="description">{{item.description}}</p>
-             <button class="btn btn-filled btn-size btn-pd-filled" [routerLink]="['/product/', item.id]" >
-                 Explore {{item.key}}
-             </button>
-         </div>
+<section
+  class="category-container"
+  aria-labelledby="categories"
+  name="categories"
+  sr-only="categories"
+>
+  <div class="category-card" *ngFor="let item of categories">
+    <img [src]="item.imageUrl" alt="categories" />
+    <div class="product-details">
+      <h3>{{ item.name }}</h3>
+      <p class="description">{{ item.description }}</p>
+      <button
+        class="btn btn-filled btn-size btn-pd-filled"
+        [routerLink]="['/product/', item.id]"
+      >
+        Explore {{ item.key }}
+      </button>
     </div>
-
-
+  </div>
 </section>

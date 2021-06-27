@@ -1,44 +1,48 @@
 <app-header></app-header>
-<section class="cart-main-container" >
-    <div class="cart-header">
-        My Cart ( {{cartItemCounter}} item)
+<section class="cart-main-container">
+  <div class="cart-header">My Cart ( {{ cartItemCounter }} item)</div>
+  <div class="row" *ngFor="let item of cartItems">
+    <div class="col span-2-of-2 cart-items">
+      <img [src]="item.product.imageURL" class="cart-image" alt="" />
+      <div class="item-detail">
+        <h3>{{ item.product.name }}</h3>
+        <p class="product-counter">
+          <button
+            type="button"
+            class="item-count"
+            (click)="updateQty(item.product.id, 'sub')"
+            [disabled]="item.quantity < 0"
+          >
+            -
+          </button>
+          {{ item.quantity }}
+          <button
+            class="item-count"
+            (click)="updateQty(item.product.id, 'add')"
+            [disabled]="item.quantity > item.product.stock"
+          >
+            +
+          </button>
+          X Rs{{ item.product.price }}
+        </p>
+      </div>
+      <div class="item-price">Rs {{ item.product.price * item.quantity }}</div>
     </div>
-    <div class="row" *ngFor="let item of cartItems">
-        <div class="col span-2-of-2 cart-items">
-            <img [src]="item.product.imageURL" class="cart-image" alt="">
-            <div class="item-detail">
-                <h3>{{item.product.name}}</h3>
-                <p class="product-counter">
-                    <button 
-                        type="button" 
-                        class="item-count" 
-                        (click)="updateQty(item.product.id,'sub')"
-                        [disabled]="item.quantity < 0"
-                        >-</button> {{item.quantity}} 
-                    <button 
-                        class="item-count" 
-                        (click)="updateQty(item.product.id,'add')"
-                        [disabled]="item.quantity > item.product.stock">+</button> X Rs{{item.product.price}}
-                </p>
-            </div>
-            <div class="item-price">
-                Rs {{ item.product.price * item.quantity }}
-            </div>
-        </div>
-
-        
+  </div>
+  <div class="cart-info">
+    <img src="/assets/images/lowest-price.png" alt="" />
+    <span>You won't find cheaper anywhere</span>
+  </div>
+  <div class="checkout-container">
+    <div class="checkout-info">Promo Code can be applied on payment page</div>
+    <div class="btn btn-filled btn-checkout">
+      <div>Proceed To checkout</div>
+      <div class="checkout-text">
+        Rs&nbsp;{{ totalCheckoutAmount }}&nbsp;<span
+          class="material-icons icons"
+          >chevron_right</span
+        >
+      </div>
     </div>
-    <div class="cart-info">
-        <img src="/assets/images/lowest-price.png" alt="">
-        <span>You won't find cheaper anywhere</span>
-    </div>
-    <div class="checkout-container">
-        <div class="checkout-info">Promo Code can be applied on payment page</div>
-        <div class="btn btn-filled btn-checkout">
-            <div>Proceed To checkout</div>
-            <div class="checkout-text">
-                Rs&nbsp;{{totalCheckoutAmount}}&nbsp;<span class="material-icons icons">chevron_right</span>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>

@@ -1,18 +1,22 @@
-<div class="product-wrapper" >
-    <div class="row">
-        <div class="col span-1-of-3 m-0-2" *ngFor="let item of productList">
-            <div class="card">
-                <h3>{{ item.name }}</h3>
-                <div class="card-content">
-                    <img [src]="item.imageURL" alt="" />
-                    <div class="description">
-                        {{item.description.length<100 ? item.description : item.description.slice(0,99)}}
-                    </div>
-                </div>
-                <div class="card-price" (click)="updateCart(item)">
-                    Buy Now @&nbsp;&#8377;{{item.price}}
-                </div>
-            </div>
-        </div>   
+<div class="product-wrapper">
+  <div class="row">
+    <div class="col span-1-of-3 m-0-2" *ngFor="let item of productList">
+      <div class="card">
+        <h3>{{ item.name }}</h3>
+        <div class="card-content">
+          <img [src]="item.imageURL" alt="" />
+          <div class="description">
+            {{
+              item.description.length < 100
+                ? item.description
+                : item.description.slice(0, 99)
+            }}
+          </div>
+        </div>
+        <div class="card-price" (click)="updateCart(item)">
+          Buy Now @&nbsp;&#8377;{{ item.price }}
+        </div>
+      </div>
     </div>
+  </div>
 </div>
