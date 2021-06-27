@@ -1,12 +1,11 @@
-import { SidebarService } from './../sidenav/sidebar.service';
+import { SidebarService } from '../sidenav/sidenav.service';
 import { CartService } from './../../core/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
   cartItemCounter: number = 0;

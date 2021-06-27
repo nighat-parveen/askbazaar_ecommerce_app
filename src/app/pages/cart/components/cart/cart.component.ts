@@ -1,12 +1,12 @@
-import { Cart } from './../../../core/models/cart.model';
-import { CartService } from './../../../core/services/cart.service';
+
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/core/services/cart.service';
+import { Cart } from 'src/app/core/models/cart.model';
 
 @Component({
   selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  templateUrl: './cart.component.html'
 })
 export class CartComponent implements OnInit {
   cartItems: Cart[] = [];

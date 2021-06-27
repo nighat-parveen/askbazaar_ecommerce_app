@@ -1,4 +1,4 @@
-import { routesInfo } from './sidebar.metadata';
+import { routesInfo } from './sidenav.metadata';
 
 
 // sidebar Menu routes and data

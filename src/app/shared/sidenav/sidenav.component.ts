@@ -1,12 +1,11 @@
 import { Subscription } from 'rxjs';
-import { SidebarService } from './sidebar.service';
-import { ROUTES } from './sidebar-routes.config';
+import { SidebarService } from './sidenav.service';
+import { ROUTES } from './sidenav-routes.config';
 import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  templateUrl: './sidenav.component.html'
 })
 export class SidenavComponent implements OnInit {
 

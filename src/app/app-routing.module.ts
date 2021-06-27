@@ -1,8 +1,8 @@
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { content_routes } from './pageRoutes/content-layout.routes';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import { ContentLayoutComponent } from './components/content-layout/content-layout.component';
+import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
 import { full_layout } from './pageRoutes/full-layout.routes';
 
 const routes: Routes = [
