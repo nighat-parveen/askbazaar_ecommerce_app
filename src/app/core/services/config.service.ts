@@ -4,22 +4,17 @@ import productData from '../../server/products/product.metadata';
 import { Observable } from 'rxjs';
 import categoryData from '../../server/categories/categories.metaData';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConfigService {
+  constructor() {}
 
-  constructor() { }
-
-
-  getProductByCategoryType(type: string){
-    if(type === 'all') return productData;
-    return productData.filter(item => item.category === type);
-  
+  getProductByCategoryType(type: string) {
+    if (type === 'all') return productData;
+    return productData.filter((item) => item.category === type);
   }
 
-
-  getCategories(){
+  getCategories() {
     return categoryData;
-  
   }
 }

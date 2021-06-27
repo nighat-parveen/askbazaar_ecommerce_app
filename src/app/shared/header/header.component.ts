@@ -5,20 +5,20 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
   cartItemCounter: number = 0;
   onCartValueChanged$: Subscription;
 
-  constructor(private cartService: CartService,
-              private sidebarService: SidebarService) {
-              this.onCartValueChanged$ = this.cartService.onCartChanged$
-              .subscribe(value => this.cartItemCounter = value);
-   }
+  constructor(
+    private cartService: CartService,
+    private sidebarService: SidebarService
+  ) {
+    this.onCartValueChanged$ = this.cartService.onCartChanged$.subscribe(
+      (value) => (this.cartItemCounter = value)
+    );
+  }
 
   ngOnInit(): void {}
-
-  
-
 }

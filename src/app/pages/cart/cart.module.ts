@@ -5,15 +5,8 @@ import { CommonModule } from '@angular/common';
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './components/cart/cart.component';
 
-
 @NgModule({
-  declarations: [
-    CartComponent
-  ],
-  imports: [
-    CommonModule,
-    CartRoutingModule,
-    SharedModule
-  ]
+  declarations: [CartComponent],
+  imports: [CommonModule, CartRoutingModule, SharedModule],
 })
-export class CartModule { }
+export class CartModule {}

@@ -1,9 +1,7 @@
-
-
-export interface routesInfo{
-    path: string;
-    title: string;
-    class: string;
-    subMenu: routesInfo[];
-    icon: string;
+export interface routesInfo {
+  path: string;
+  title: string;
+  class: string;
+  subMenu: routesInfo[];
+  icon: string;
 }

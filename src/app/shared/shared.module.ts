@@ -6,26 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
-
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
-   
-  ],
-  imports: [
-    CommonModule,
-    SharedRoutingModule
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
-   
-  ],
-  providers: [
-    
-  ]
+  declarations: [HeaderComponent, FooterComponent, SidenavComponent],
+  imports: [CommonModule, SharedRoutingModule],
+  exports: [HeaderComponent, FooterComponent, SidenavComponent],
+  providers: [],
 })
-export class SharedModule { }
+export class SharedModule {}

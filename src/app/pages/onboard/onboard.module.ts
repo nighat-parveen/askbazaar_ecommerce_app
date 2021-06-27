@@ -6,16 +6,8 @@ import { OnboardRoutingModule } from './onboard-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-
 @NgModule({
-  declarations: [
-    LoginComponent,
-    SignupComponent
-  ],
-  imports: [
-    CommonModule,
-    OnboardRoutingModule,
-    SharedModule
-  ]
+  declarations: [LoginComponent, SignupComponent],
+  imports: [CommonModule, OnboardRoutingModule, SharedModule],
 })
-export class OnboardModule { }
+export class OnboardModule {}

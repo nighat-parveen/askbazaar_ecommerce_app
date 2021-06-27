@@ -9,43 +9,38 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 
   // public routes division
   {
     path: '',
     component: ContentLayoutComponent,
-    children: content_routes
-  
+    children: content_routes,
   },
 
   // dashboard Routes division
   {
     path: '',
     component: MainLayoutComponent,
-    children: full_layout
+    children: full_layout,
   },
 
   {
     path: '**',
-    redirectTo: 'auth/login'
-  }
-
+    redirectTo: 'auth/login',
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      routes,
-      {
-        // add hash url
-        useHash: true, 
-        // for preload modules
-        // preloadingStrategy: PreloadAllModules
-      }
-    
-    )],
-  exports: [RouterModule]
+    RouterModule.forRoot(routes, {
+      // add hash url
+      useHash: true,
+      // for preload modules
+      // preloadingStrategy: PreloadAllModules
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

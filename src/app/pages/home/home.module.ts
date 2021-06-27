@@ -7,17 +7,8 @@ import { OffersComponent } from './offers/offers.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    HomeComponent,
-    OffersComponent,
-    CategoriesComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    HomeRoutingModule
-  ]
+  declarations: [HomeComponent, OffersComponent, CategoriesComponent],
+  imports: [CommonModule, SharedModule, HomeRoutingModule],
 })
-export class HomeModule { }
+export class HomeModule {}

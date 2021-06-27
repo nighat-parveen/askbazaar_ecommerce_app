@@ -2,26 +2,21 @@ import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SidebarService {
-
   isSidebar$: BehaviorSubject<any> = new BehaviorSubject(false);
-  constructor() { }
+  constructor() {}
 
-
-
-  setSidebarState(state: boolean){
+  setSidebarState(state: boolean) {
     this.isSidebar$.next(state);
   }
 
-  getSidebarState(){
+  getSidebarState() {
     return this.isSidebar$.getValue();
   }
 
-  toggle(){
+  toggle() {
     this.isSidebar$.next(!this.isSidebar$);
   }
-
-  
 }

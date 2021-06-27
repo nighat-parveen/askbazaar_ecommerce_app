@@ -9,18 +9,14 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContentLayoutComponent,
-    MainLayoutComponent
-  ],
+  declarations: [AppComponent, ContentLayoutComponent, MainLayoutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
